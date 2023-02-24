@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budweg.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -8,35 +9,47 @@ using System.Threading.Tasks;
 namespace Budweg.Models
 
 {
-     public class Order
-     {
-            public int OrderId { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public bool IsCompleted { get; set; }
+    public class Order
+    {
+        public int OrderId { get; set; }    
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public User Owner { get; set; }
 
-            public Order (int OrderId, string Name, string Description, bool IsCompleted)
+        private bool completed;
+        public bool QualityAssuranceStamp { get; set; }
+
+        public Order(string name, string description, User owner)
+        {
+            Name = name;
+            Description = description;
+            Owner = owner;
+            completed = false;
+            QualityAssuranceStamp = false;
+        }
+
+        public void MarkCompleted(User currentUser)
+        {
+            if (currentUser.Role == Role.QualityAssurance)
             {
-                this.OrderId = OrderId;
-                this.Name = Name;
-                this.Description = Description;
-                this.IsCompleted = IsCompleted;
+                Console.WriteLine("Has the order been completed? (Y/N)");
+                string input = Console.ReadLine();
+                if (input.ToLower() == "y")
+                {
+                    completed = true;
+                }
             }
-            
-            public Order() : this (0, null, null, false)
+            else
             {
-
+                Console.WriteLine("You do not have permission to mark orders as completed.");
             }
+        }
 
-        public void CreateOrdre (int OrderId, string Name, string Description, bool IsCompleted)
-            {
-                
-                Order Order1 = new Order(OrderId, Name, Description, IsCompleted);
+        public bool IsCompleted()
+        {
+            return completed;
+        }
+    }
 
-            } 
-
-
-
-     }
 }
 
