@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,38 +10,60 @@ namespace Budweg.Repositories
 {
     public class OrderRepository
     {
-
         private List<Order> orders = new List<Order>();
+
+        public void Save()
+        {
+
+        }
+
+        public void Load()
+        {
+
+        }
 
         public void AddOrder(Order order)
         {
             orders.Add(order);
         }
 
-        public void UpdateOrder(Order order)
+        public Order GetOrders()
         {
-            var index = orders.FindIndex(o => o.OrderId == order.OrderId);
-            if (index != -1)
+            return null;
+        }
+
+        public void GetUnassignedOrders(Order order)
+        {
+            for (int i = 0; i < orders.Count(); i++)
             {
-                orders[index] = order;
+                if (orders[i].Assigned != true)
+                {
+                    List<Order> UnAssignedOrders = new List<Order>();
+                    UnAssignedOrders.Add(orders[i]);
+                }
             }
         }
 
-        public void DeleteOrder(int id)
+        public void GetassignedOrders(Order order)
         {
-            orders.RemoveAll(o => o.OrderId == id);
+            for (int i = 0; i < orders.Count(); i++)
+            {
+                if (orders[i].Assigned == true)
+                {
+                    List<Order> AssignedOrders = new List<Order>();
+                    AssignedOrders.Add(orders[i]);
+                }
+            }
+        }
+
+        public void UpdateOrderStatus(int orderId, bool status)
+        {
 
         }
 
-        public Order GetOrderById(int id)
+        public void AssignOrder(int orderId, string AssemblyWorker)
         {
-            return orders.FirstOrDefault(o => o.OrderId == id);
-        }
 
-        public List<Order> GetAllOrders()
-        {
-            return orders;
         }
-
     }
 }

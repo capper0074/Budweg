@@ -11,32 +11,24 @@ namespace Budweg.Models
      public class Order
      {
             public int OrderId { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public bool IsCompleted { get; set; }
-
-            public Order (int OrderId, string Name, string Description, bool IsCompleted)
-            {
-                this.OrderId = OrderId;
-                this.Name = Name;
-                this.Description = Description;
-                this.IsCompleted = IsCompleted;
-            }
+            public Employee Owner { get; set; }
+            public string WorkerName { get; set; }
+            public bool EndControlStatus { get; set; }
+            public bool Assigned { get; set; }
+            public int NumberOfCaliber { get; set; }
+            public string Comment { get; set; }
             
-            public Order() : this (0, null, null, false)
-            {
 
-            }
-
-        public void CreateOrdre (int OrderId, string Name, string Description, bool IsCompleted)
-            {
-                
-                Order Order1 = new Order(OrderId, Name, Description, IsCompleted);
-
-            } 
-
-
-
+        public Order(int orderId, Employee owner, string workerName, bool endControlStatus, bool assigned, int numberOfCaliber, string comment)
+        {
+            OrderId = orderId;
+            Owner = owner;
+            WorkerName = workerName;
+            EndControlStatus = endControlStatus;
+            Assigned = assigned;
+            NumberOfCaliber = numberOfCaliber;
+            Comment = comment;
+        }
      }
 }
 

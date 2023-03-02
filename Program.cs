@@ -4,7 +4,7 @@ using Budweg.Views;
 
 class Program
 {
-    static UserRepository userRepository = new UserRepository();
+    static Budweg.Repositories.EmployeeRepository userRepository = new Budweg.Repositories.EmployeeRepository();
     static Menus menus = new Menus();
 
     static void Main(string[] args)

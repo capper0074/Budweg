@@ -6,5 +6,10 @@ using System.Threading.Tasks;
 
 namespace Budweg.Models
 {
-    
+    public enum  Role
+    {
+        Foreman,
+        ProductionWorker,
+        QualityAssurance
+    }
 }
