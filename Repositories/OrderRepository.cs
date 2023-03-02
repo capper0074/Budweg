@@ -27,7 +27,7 @@ namespace Budweg.Repositories
             orders.Add(order);
         }
 
-        public Order GetOrders()
+        public List<Order> GetOrders()
         {
             return null;
         }

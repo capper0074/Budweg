@@ -16,14 +16,12 @@ namespace Budweg.Models
         public string Password { get; set; }
         public Role EmpoyeeRole { get; set; }
 
-        public Employee(int iDCount, int id, string name, string email, string password, Role empoyeeRole)
+        public Employee(string name, string email, string password)
         {
-            this.iDCount = iDCount;
-            Id = id;
+            
             Name = name;
             Email = email;
             Password = password;
-            EmpoyeeRole = empoyeeRole;
         }
     }
 }

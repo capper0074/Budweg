@@ -6,7 +6,6 @@ class Program
 {
     static Budweg.Repositories.EmployeeRepository userRepository = new Budweg.Repositories.EmployeeRepository();
     static Menus menus = new Menus();
-
     static void Main(string[] args)
     {
         // Add a test user to the repository

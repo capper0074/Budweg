@@ -42,9 +42,19 @@ namespace Budweg.Repositories
             }
         }
 
-        public void RetriveQualityCheck(QualityCheck qualityCheck)
+        public QualityCheck RetrieveQualityCheck(int id)
         {
-
+            if (id > 0)
+            {
+                for (int i = id; i < qualityChecks.Count(); i++)
+                {
+                    if (qualityChecks[i].ID == id)
+                    {
+                        return qualityChecks[i];
+                    }
+                }
+            }
+            return null;
         }
 
         public void LinkQualityCheck(int id)

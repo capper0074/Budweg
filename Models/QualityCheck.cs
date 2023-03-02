@@ -16,9 +16,8 @@ namespace Budweg.Models
         public string Forwarding{ get; set; }
         public string Remark { get; set; }
 
-        public QualityCheck(int iD, int linkedId, string doneBy, bool passed, bool assigned, string forwarding, string remark)
+        public QualityCheck(int linkedId, string doneBy, bool passed, bool assigned, string forwarding, string remark) //linked id in constructor?
         {
-            ID = iD;
             LinkedId = linkedId;
             DoneBy = doneBy;
             Passed = passed;

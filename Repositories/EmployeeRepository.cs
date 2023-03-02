@@ -14,12 +14,12 @@ namespace Budweg.Repositories
 
         public void Save()
         {
-
+            //Save list to database
         }
 
         public void Load()
         {
-
+            //Loading database tables
         }
 
         public void AddEmployee(Employee employee)
@@ -27,8 +27,31 @@ namespace Budweg.Repositories
             employees.Add(employee);
         }
 
-        public void UpdateEmployee(Employee employee)
+        public void UpdateEmployee(int id, int choice, string newData)
         {
+            try
+            {
+                if (id > 0)
+                {
+                    switch (choice)
+                    {
+                        case 1:
+                            GetUserById(id).Name = newData;
+                            break;
+                        case 2:
+                            GetUserById(id).Email = newData;
+                            break;
+                        case 3:
+                            GetUserById(id).Password = newData;
+                            break;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
 
@@ -43,8 +66,32 @@ namespace Budweg.Repositories
             }
         }
 
-        public void SetRole(int choice)
+        public void SetRole(int choice, int id)
         {
+            try
+            {
+                if (choice > 0 | choice < 4)
+                {
+                    switch (choice)
+                    {
+                        case 1:
+                            GetUserById(id).EmpoyeeRole = Role.Foreman;
+                            break;
+                        case 2:
+                            GetUserById(id).EmpoyeeRole = Role.ProductionWorker;
+                            break;
+                        case 3:
+                            GetUserById(id).EmpoyeeRole = Role.QualityAssurance;
+                            break;
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
 
@@ -64,17 +111,26 @@ namespace Budweg.Repositories
             return false;
         }
 
-        public void GetUserById(int id, Employee employee)
+        public Employee GetUserById(int id)
         {
-            
+            if (id > 0)
+                for (int i = id; i < employees.Count(); i++)
+                {
+                    if (employees[i].Id == id)
+                    {
+                        return employees[i];
+                    }
+                }
+            return null;
         }
 
-        public void GetNextId(Employee employee, int id)
-        {
+    public Employee GetNextId(int id)
+    {
 
-        }
-
-
-       
+        return null; //method for getting next id?
     }
+
+
+
+}
 }

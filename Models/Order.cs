@@ -19,9 +19,8 @@ namespace Budweg.Models
             public string Comment { get; set; }
             
 
-        public Order(int orderId, Employee owner, string workerName, bool endControlStatus, bool assigned, int numberOfCaliber, string comment)
+        public Order(Employee owner, string workerName, bool endControlStatus, bool assigned, int numberOfCaliber, string comment)
         {
-            OrderId = orderId;
             Owner = owner;
             WorkerName = workerName;
             EndControlStatus = endControlStatus;
