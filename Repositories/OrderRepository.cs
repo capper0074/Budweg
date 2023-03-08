@@ -29,6 +29,18 @@ namespace Budweg.Repositories
 
         public List<Order> GetOrders()
         {
+            return orders;
+        }
+
+        public Order GetOrderById(int id) 
+        {
+            foreach (Order order in orders) 
+            {   
+                if (order.OrderId == id)
+                {
+                    return order;
+                }
+            }
             return null;
         }
 
@@ -44,26 +56,46 @@ namespace Budweg.Repositories
             }
         }
 
-        public void GetassignedOrders(Order order)
+        public List<Order> GetAssignedOrders()
         {
-            for (int i = 0; i < orders.Count(); i++)
+            return orders.FindAll(o => o.Assigned != false);
+        }
+
+        public void UpdateOrder(int id, int choice, int newData)
+        {
+            if (id > 0 && id < 2)
             {
-                if (orders[i].Assigned == true)
+                switch (choice)
                 {
-                    List<Order> AssignedOrders = new List<Order>();
-                    AssignedOrders.Add(orders[i]);
+                    case 1:
+                        GetOrderById(id).NumberOfCaliber = newData;
+                        break;
+                    case 2:
+                        GetOrderById(id).EmplyoeeId = newData;
+                        break;
                 }
+
             }
         }
-
-        public void UpdateOrderStatus(int orderId, bool status)
+        public void UpdateOrder(int id, string newData)
         {
-
+          GetOrderById(id).Comment = newData;
         }
 
-        public void AssignOrder(int orderId, string AssemblyWorker)
+        public void UpdateOrder(int id, Employee emp)
         {
+            GetOrderById(id).Owner = emp;
+        }
 
+        public void AssignOrder(int orderId, int emplyoeeId)
+        {
+            foreach (Order order in orders)
+            {
+                if (order.OrderId == orderId)
+                {
+                    order.EmplyoeeId = emplyoeeId;
+                }
+            }
         }
     }
 }

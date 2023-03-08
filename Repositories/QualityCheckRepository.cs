@@ -35,20 +35,20 @@ namespace Budweg.Repositories
         {
             for (int i = 0; i < qualityChecks.Count; i++)
             {
-                if (qualityChecks[i].ID == id)
+                if (qualityChecks[i].QualityCheckId == id)
                 {
                     qualityChecks.Remove(qualityChecks[i]);
                 }
             }
         }
 
-        public QualityCheck RetrieveQualityCheck(int id)
+        public QualityCheck GetQualityCheckById(int id)
         {
             if (id > 0)
             {
                 for (int i = id; i < qualityChecks.Count(); i++)
                 {
-                    if (qualityChecks[i].ID == id)
+                    if (qualityChecks[i].QualityCheckId == id)
                     {
                         return qualityChecks[i];
                     }
@@ -57,9 +57,15 @@ namespace Budweg.Repositories
             return null;
         }
 
-        public void LinkQualityCheck(int id)
+        public void LinkQualityCheck(int id, int linkedOrderId)
         {
-
+            foreach (QualityCheck qualityCheck in qualityChecks) 
+            {
+                if (qualityCheck.QualityCheckId == id)
+                {
+                    qualityCheck.LinkedOrderId = linkedOrderId;
+                }
+            }
         }
 
     }

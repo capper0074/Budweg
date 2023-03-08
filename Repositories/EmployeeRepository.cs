@@ -59,7 +59,7 @@ namespace Budweg.Repositories
         {
             for (int i = 0; i < employees.Count; i++)
             {
-                if (employees[i].Id == id)
+                if (employees[i].EmployeeId == id)
                 {
                     employees.Remove(employees[i]);
                 }
@@ -70,7 +70,7 @@ namespace Budweg.Repositories
         {
             try
             {
-                if (choice > 0 | choice < 4)
+                if (choice > 0 && choice < 4)
                 {
                     switch (choice)
                     {
@@ -86,7 +86,6 @@ namespace Budweg.Repositories
                     }
 
                 }
-
             }
             catch (Exception ex)
             {
@@ -122,6 +121,11 @@ namespace Budweg.Repositories
                     }
                 }
             return null;
+        }
+
+        public List<Employee> GetAllEmployees()
+        {
+            return employees;
         }
 
     public Employee GetNextId(int id)

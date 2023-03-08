@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budweg.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -9,22 +10,20 @@ namespace Budweg.Models
 
 {
      public class Order
-     {
+     {  
             public int OrderId { get; set; }
             public Employee Owner { get; set; }
-            public string WorkerName { get; set; }
+            public int EmplyoeeId { get; set; }
             public bool EndControlStatus { get; set; }
             public bool Assigned { get; set; }
             public int NumberOfCaliber { get; set; }
             public string Comment { get; set; }
             
 
-        public Order(Employee owner, string workerName, bool endControlStatus, bool assigned, int numberOfCaliber, string comment)
+        public Order(Employee owner, int numberOfCaliber, string comment)
         {
             Owner = owner;
-            WorkerName = workerName;
-            EndControlStatus = endControlStatus;
-            Assigned = assigned;
+            EndControlStatus = false;
             NumberOfCaliber = numberOfCaliber;
             Comment = comment;
         }
