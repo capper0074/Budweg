@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 namespace Budweg.Models
 
 {
-     public class Order
-     {  
-            public int OrderId { get; set; }
-            public Employee Owner { get; set; }
-            public int EmplyoeeId { get; set; }
-            public bool EndControlStatus { get; set; }
-            public bool Assigned { get; set; }
-            public int NumberOfCaliber { get; set; }
-            public string Comment { get; set; }
-            
+    public class Order
+    {
+        public int OrderId { get; set; }
+        public Employee Owner { get; set; }
+        public int EmplyoeeId { get; set; }
+        public bool EndControlStatus { get; set; }
+        public bool Assigned { get; set; }
+        public int NumberOfCaliber { get; set; }
+        public string Comment { get; set; }
+
 
         public Order(Employee owner, int numberOfCaliber, string comment)
         {
@@ -27,6 +27,6 @@ namespace Budweg.Models
             NumberOfCaliber = numberOfCaliber;
             Comment = comment;
         }
-     }
+    }
 }
 

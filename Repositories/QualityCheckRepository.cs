@@ -59,7 +59,7 @@ namespace Budweg.Repositories
 
         public void LinkQualityCheck(int id, int linkedOrderId)
         {
-            foreach (QualityCheck qualityCheck in qualityChecks) 
+            foreach (QualityCheck qualityCheck in qualityChecks)
             {
                 if (qualityCheck.QualityCheckId == id)
                 {

@@ -115,7 +115,7 @@ namespace Budweg.Repositories
             if (id > 0)
                 for (int i = id; i < employees.Count(); i++)
                 {
-                    if (employees[i].Id == id)
+                    if (employees[i].EmployeeId == id)
                     {
                         return employees[i];
                     }
@@ -127,14 +127,5 @@ namespace Budweg.Repositories
         {
             return employees;
         }
-
-    public Employee GetNextId(int id)
-    {
-
-        return null; //method for getting next id?
     }
-
-
-
-}
 }

@@ -63,7 +63,7 @@ namespace Budweg.Repositories
 
         public void UpdateOrder(int id, int choice, int newData)
         {
-            if (id > 0 && id < 2)
+            if (choice > 0 && choice < 2)
             {
                 switch (choice)
                 {

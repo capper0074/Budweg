@@ -14,7 +14,7 @@ namespace Budweg.Models
         public string DoneBy { get; set; }
         public bool Passed { get; set; }
         public bool Assigned { get; set; }
-        public string Forwarding{ get; set; }
+        public string Forwarding { get; set; }
         public string Remark { get; set; }
 
         public QualityCheck(string doneBy, bool passed, bool assigned, string forwarding, string remark) //linked id in constructor?
