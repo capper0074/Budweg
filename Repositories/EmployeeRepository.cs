@@ -20,9 +20,9 @@ namespace Budweg.Repositories
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO dbo.EMPLOYEE (Name, Email, Password, Role) VALUES(@Name, @Email, @Password, @Role);", con);
                 foreach (Employee emp in newEmployees)
                 {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO dbo.EMPLOYEE (Name, Email, Password, Role) VALUES(@Name, @Email, @Password, @Role);", con);
                     cmd.Parameters.AddWithValue("@Name", emp.Name);
                     cmd.Parameters.AddWithValue("@Email", emp.Email);
                     cmd.Parameters.AddWithValue("@Password", emp.Password);
