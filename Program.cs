@@ -20,7 +20,7 @@ class Program
 
         Employee employee2 = new Employee("Hanne", "Hanne@gmail.com", "21529", Role.QualityManager);
         employeeRepository.AddEmployee(employee2);
-        
+
         employeeRepository.Save();
 
         employeeRepository.Load();
