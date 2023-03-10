@@ -13,8 +13,9 @@ namespace Budweg.Models
         public int OrderId { get; set; }
         public int QualityCheckId { get; set; }
 
-        public FinishedOrder(int qualityCheckId)
+        public FinishedOrder(int qualityCheckId, int orderId)
         {
+            OrderId = orderId;
             QualityCheckId = qualityCheckId;
         }
     }

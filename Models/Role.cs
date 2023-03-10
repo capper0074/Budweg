@@ -9,7 +9,7 @@ namespace Budweg.Models
     public enum  Role
     {
         Foreman,
-        ProductionWorker,
-        QualityAssurance
+        AssemblyWorker,
+        QualityManager
     }
 }

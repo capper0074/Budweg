@@ -13,14 +13,19 @@ namespace Budweg.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public Role EmpoyeeRole { get; set; }
+        public Role EmployeeRole { get; set; }
 
-        public Employee(string name, string email, string password)
+        public Employee(string name, string email, string password, Role role)
         {
-
             Name = name;
             Email = email;
             Password = password;
+            EmployeeRole = role;
+        }
+
+        public override string ToString()
+        {
+            return $"{EmployeeId}, {Name}, {Email}, {Password}, {EmployeeRole}";
         }
     }
 }

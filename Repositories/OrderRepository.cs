@@ -11,6 +11,7 @@ namespace Budweg.Repositories
     public class OrderRepository
     {
         private List<Order> orders = new List<Order>();
+        private string connectionString = "Server=10.56.8.36; database=DB_2023_62; user id=STUDENT_62; password=OPENDB_62";
 
         public void Save()
         {
@@ -20,6 +21,14 @@ namespace Budweg.Repositories
         public void Load()
         {
 
+        }
+
+
+        public Order CreateOrder(Employee owner, int employeeId, int numberOfCalibers, bool assigned,string comment)
+        {
+            Order order = new Order(owner, employeeId, numberOfCalibers, comment, assigned);
+            AddOrder(order);
+            return order;
         }
 
         public void AddOrder(Order order)

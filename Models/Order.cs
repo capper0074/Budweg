@@ -20,11 +20,13 @@ namespace Budweg.Models
         public string Comment { get; set; }
 
 
-        public Order(Employee owner, int numberOfCaliber, string comment)
+        public Order(Employee owner, int employeeId, int numberOfCaliber, string comment, bool assigned)
         {
             Owner = owner;
+            EmplyoeeId = employeeId;
             EndControlStatus = false;
             NumberOfCaliber = numberOfCaliber;
+            Assigned = assigned;
             Comment = comment;
         }
     }

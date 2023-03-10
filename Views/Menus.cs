@@ -22,14 +22,14 @@ namespace Budweg.Views
                     Console.WriteLine("4. Delete an order");
                     Console.ReadLine();
                 }
-                else if (role == Role.ProductionWorker)
+                else if (role == Role.AssemblyWorker)
                 {
                     Console.WriteLine("Production Worker Menu:");
                     Console.WriteLine("1. View my assigned orders");
                     Console.WriteLine("2. Mark an order as completed");
                     Console.ReadLine();
                 }
-                else if (role == Role.QualityAssurance)
+                else if (role == Role.QualityManager)
                 {
                     Console.WriteLine("Quality Assurance Menu:");
                     Console.WriteLine("1. View all orders");

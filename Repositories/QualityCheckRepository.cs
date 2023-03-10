@@ -10,6 +10,7 @@ namespace Budweg.Repositories
     public class QualityCheckRepository
     {
         private List<QualityCheck> qualityChecks = new List<QualityCheck>();
+        private string connectionString = "Server=10.56.8.36; database=DB_2023_62; user id=STUDENT_62; password=OPENDB_62";
 
         public void Save()
         {
@@ -19,6 +20,13 @@ namespace Budweg.Repositories
         public void Load()
         {
 
+        }
+
+        public QualityCheck CreateQualityCheck(int orderId, string doneBy, bool passed, bool assigned, string remark)
+        {
+            QualityCheck qualityCheck = new QualityCheck(orderId, doneBy, passed, assigned, remark);
+            AddQualityCheck(qualityCheck);
+            return qualityCheck;
         }
 
         public void AddQualityCheck(QualityCheck qualityCheck)
@@ -63,7 +71,7 @@ namespace Budweg.Repositories
             {
                 if (qualityCheck.QualityCheckId == id)
                 {
-                    qualityCheck.LinkedOrderId = linkedOrderId;
+                    qualityCheck.OrderId = linkedOrderId;
                 }
             }
         }
