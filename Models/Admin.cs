@@ -18,5 +18,10 @@ namespace Budweg.Models
             Email = email;
             Password = password;
         }
+        public override string ToString()
+        {
+            return $"{Name}, {Email}, {Password}";
+        }
     }
+
 }
