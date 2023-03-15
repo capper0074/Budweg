@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Budweg.Models
 {
@@ -25,7 +26,7 @@ namespace Budweg.Models
         //    Remark = remark;
         //}
 
-        public QualityCheck(int qualityCheckId, string doneBy, bool passed, bool assigned, string remark) //linked id in constructor?
+        public QualityCheck(int qualityCheckId, string doneBy, bool passed, bool assigned, string remark) //Assigned should be replaced for QAManagerId (implicitly assigned or not)
         {
             QualityCheckId = qualityCheckId;
             DoneBy = doneBy;
@@ -33,5 +34,9 @@ namespace Budweg.Models
             Assigned = assigned;
             Remark = remark;
         }
+        //public override string ToString()
+        //{
+        //    return $"{OrderId}, {EmployeeId}, {NumberOfCalibers}, {EndControl}, {Comment}, {Assigned}";
+        //}
     }
 }

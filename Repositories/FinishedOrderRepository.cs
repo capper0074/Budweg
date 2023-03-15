@@ -18,7 +18,6 @@ namespace Budweg.Repositories
         public void Load()
         {
            
-           
         }
 
         public void Save() 

@@ -29,9 +29,9 @@ class Program
 
         OrderRepository orderRepository = new OrderRepository();
 
-        //Order order = new Order(42, 125, "Husk at checke bagstemplet, Egon.", false);
-        //orderRepository.AddOrder(order);
-
+        Order order = new Order(42, 125, "Husk at checke bagstemplet, Egon.", false);
+        orderRepository.AddOrder(order);
+        orderRepository.Save();
         //foreach (Order ord in orderRepository.GetOrders())
         //{
         //    Console.WriteLine(ord.ToString());

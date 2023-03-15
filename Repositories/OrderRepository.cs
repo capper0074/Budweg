@@ -23,7 +23,9 @@ namespace Budweg.Repositories
                 con.Open();
                 foreach (Order orders in orders)
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO ORDERS(EmployeeId, EndControl, NumberOfCalibers, Comment)" +
+                    SqlCommand cmd = new SqlCommand("INSERT INTO ORDERS(EmployeeId, EndControl, NumberOfCalibers, Comment)" + //It's implicitly given that the Order is assigned
+                                                                                                                              //and has an employee if an EmployeeId is given.
+                                                                                                                              
                                                  "VALUES(@EmployeeId, @EndControl, @NumberOfCalibers, @Comment);", con);
                     cmd.Parameters.AddWithValue("@EmployeeId", orders.EmployeeId);
                     cmd.Parameters.AddWithValue("@EndControl", orders.EndControl);
