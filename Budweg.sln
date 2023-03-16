@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budweg", "Budweg.csproj", "{3B953785-1FCF-4452-838C-4FBFED11D909}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF", "..\WPF\WPF.csproj", "{D59DD48C-6360-4F4C-8043-FB1B427B58DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3B953785-1FCF-4452-838C-4FBFED11D909}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B953785-1FCF-4452-838C-4FBFED11D909}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B953785-1FCF-4452-838C-4FBFED11D909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59DD48C-6360-4F4C-8043-FB1B427B58DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59DD48C-6360-4F4C-8043-FB1B427B58DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59DD48C-6360-4F4C-8043-FB1B427B58DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59DD48C-6360-4F4C-8043-FB1B427B58DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

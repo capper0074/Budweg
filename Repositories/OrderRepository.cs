@@ -12,7 +12,7 @@ namespace Budweg.Repositories
     public class OrderRepository
     {
         private List<Order> orders = new List<Order>();
-        private List<Order> displayOrders = new List<Order>();
+        public List<Order> displayOrders = new List<Order>();
 
         private string connectionString = "Server=10.56.8.36; database=DB_2023_62; user id=STUDENT_62; password=OPENDB_62";
 
@@ -23,10 +23,8 @@ namespace Budweg.Repositories
                 con.Open();
                 foreach (Order orders in orders)
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO ORDERS(EmployeeId, EndControl, NumberOfCalibers, Comment)" + //It's implicitly given that the Order is assigned
-                                                                                                                              //and has an employee if an EmployeeId is given.
-                                                                                                                              
-                                                 "VALUES(@EmployeeId, @EndControl, @NumberOfCalibers, @Comment);", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO ORDERS(EmployeeId, EndControl, NumberOfCalibers, Comment)" + //It's implicitly given that the Order is assigned and has an employee if an EmployeeId is given.
+                                                    "VALUES(@EmployeeId, @EndControl, @NumberOfCalibers, @Comment);", con);
                     cmd.Parameters.AddWithValue("@EmployeeId", orders.EmployeeId);
                     cmd.Parameters.AddWithValue("@EndControl", orders.EndControl);
                     cmd.Parameters.AddWithValue("@NumberOfCalibers", orders.NumberOfCalibers);
@@ -58,7 +56,7 @@ namespace Budweg.Repositories
 
         public Order CreateOrder(int employeeId, int numberOfCalibers, bool assigned, string comment)
         {
-            Order order = new Order(employeeId, numberOfCalibers, comment, assigned);
+            Order order = new Order(employeeId, numberOfCalibers, comment);
             AddOrder(order);
             return order;
         }
@@ -70,7 +68,7 @@ namespace Budweg.Repositories
 
         public List<Order> GetOrders()
         {
-            return orders;
+            return displayOrders;
         }
 
         public Order GetOrderById(int id)

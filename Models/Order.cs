@@ -21,12 +21,11 @@ namespace Budweg.Models
         public string Comment { get; set; }
 
 
-        public Order(int employeeId, int numberOfCalibers, string comment, bool assigned)
+        public Order(int employeeId, int numberOfCalibers, string comment)
         {
             EmployeeId = employeeId;
             EndControl = false;
             NumberOfCalibers = numberOfCalibers;
-            Assigned = assigned;
             Comment = comment;
      
         }
@@ -41,7 +40,7 @@ namespace Budweg.Models
         }
         public override string ToString()
         {
-            return $"{OrderId}, {EmployeeId}, {NumberOfCalibers}, {EndControl}, {Comment}, {Assigned}";
+            return $"{OrderId}, {EmployeeId}, {NumberOfCalibers}, {EndControl}, {Comment}";
         }
     }
 }
