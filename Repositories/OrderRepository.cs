@@ -65,9 +65,13 @@ namespace Budweg.Repositories
         {
             orders.Add(order);
         }
-
+        public void ClearOrder()
+        {
+            displayOrders.Clear();
+        }
         public List<Order> GetOrders()
         {
+            //displayOrders.ToString();
             return displayOrders;
         }
 

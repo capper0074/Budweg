@@ -20,7 +20,6 @@ namespace Budweg.Models
         public int NumberOfCalibers { get; set; }
         public string Comment { get; set; }
 
-
         public Order(int employeeId, int numberOfCalibers, string comment)
         {
             EmployeeId = employeeId;
