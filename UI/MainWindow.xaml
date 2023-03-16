@@ -29,12 +29,6 @@
                         </LinearGradientBrush>
                     </Border.Background>
 
-                    <Border.Clip>
-                        <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,800,230"/>
-                    </Border.Clip>
-
                     <Grid>
                         <StackPanel>
                             <TextBlock Text="Nuværende opgave"
