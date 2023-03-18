@@ -12,7 +12,7 @@ namespace Budweg.Repositories
     public class OrderRepository
     {
         private List<Order> orders = new List<Order>();
-        public List<Order> displayOrders = new List<Order>();
+        private List<Order> displayOrders = new List<Order>();
 
         private string connectionString = "Server=10.56.8.36; database=DB_2023_62; user id=STUDENT_62; password=OPENDB_62";
 

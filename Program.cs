@@ -27,7 +27,7 @@ class Program
 
         //employeeRepository.Load();
 
-        OrderRepository orderRepository = new OrderRepository();
+        //OrderRepository orderRepository = new OrderRepository();
 
         //Order order = new Order(42, 125, "Husk at checke bagstemplet, Egon.", false);
         //orderRepository.AddOrder(order);
