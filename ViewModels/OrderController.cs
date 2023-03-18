@@ -17,8 +17,8 @@ namespace Budweg.ViewModels
 
             repository.Load();
             List<Order> orders = repository.GetOrders();
-
             return orders;
+
         }
     }
 }
