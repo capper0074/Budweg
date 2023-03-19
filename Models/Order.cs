@@ -16,20 +16,22 @@ namespace Budweg.Models
         public Employee Owner { get; set; }
         public int EmployeeId { get; set; }
         public bool EndControl { get; set; }
-        public bool Assigned { get; set; }
         public int NumberOfCalibers { get; set; }
+        public string CaliberType { get; set; }
         public string Comment { get; set; }
 
-        public Order(int employeeId, int numberOfCalibers, string comment)
+        public Order(int employeeId,string caliberType, int numberOfCalibers, string comment)
         {
+            CaliberType = caliberType;
             EmployeeId = employeeId;
             EndControl = false;
             NumberOfCalibers = numberOfCalibers;
             Comment = comment;
      
         }
-        public Order(int orderId, int employeeId, int numberOfCalibers, bool endControl, string comment)
+        public Order(int orderId, int employeeId, int numberOfCalibers, bool endControl, string comment, string caliberType)
         {
+            CaliberType = caliberType;
             OrderId = orderId;
             EmployeeId = employeeId;
             EndControl = endControl;
@@ -39,7 +41,7 @@ namespace Budweg.Models
         }
         public override string ToString()
         {
-            return $"{OrderId}, {EmployeeId}, {NumberOfCalibers}, {EndControl}, {Comment}";
+            return $"{OrderId}, {EmployeeId}, {CaliberType}, {NumberOfCalibers}, {EndControl}, {Comment}";
         }
     }
 }

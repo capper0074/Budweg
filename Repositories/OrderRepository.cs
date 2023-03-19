@@ -11,7 +11,7 @@ namespace Budweg.Repositories
 {
     public class OrderRepository
     {
-        private List<Order> orders = new List<Order>();
+        private List<Order> newOrders = new List<Order>(); // List for new entrys
         private List<Order> displayOrders = new List<Order>();
 
         private string connectionString = "Server=10.56.8.36; database=DB_2023_62; user id=STUDENT_62; password=OPENDB_62";
@@ -21,17 +21,18 @@ namespace Budweg.Repositories
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                foreach (Order orders in orders)
+                foreach (Order orders in newOrders)
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO ORDERS(EmployeeId, EndControl, NumberOfCalibers, Comment)" + //It's implicitly given that the Order is assigned and has an employee if an EmployeeId is given.
-                                                    "VALUES(@EmployeeId, @EndControl, @NumberOfCalibers, @Comment);", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO ORDERS(EmployeeId, EndControl, NumberOfCalibers, Comment, CaliberType)" + //It's implicitly given that the Order is assigned and has an employee if an EmployeeId is given.
+                                                    "VALUES(@EmployeeId, @EndControl, @NumberOfCalibers, @Comment, @CaliberType);", con);
                     cmd.Parameters.AddWithValue("@EmployeeId", orders.EmployeeId);
                     cmd.Parameters.AddWithValue("@EndControl", orders.EndControl);
+                    cmd.Parameters.AddWithValue("@CaliberType", orders.CaliberType);
                     cmd.Parameters.AddWithValue("@NumberOfCalibers", orders.NumberOfCalibers);
                     cmd.Parameters.AddWithValue("@Comment", orders.Comment);
                     cmd.ExecuteNonQuery();
                 }
-                orders.Clear();
+                newOrders.Clear();
             }
         }
 
@@ -40,13 +41,13 @@ namespace Budweg.Repositories
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT OrderId, EmployeeId, NumberOfCalibers, EndControl, Comment FROM ORDERS", con);
+                SqlCommand cmd = new SqlCommand("SELECT OrderId, EmployeeId, NumberOfCalibers, EndControl, Comment, CaliberType FROM ORDERS", con);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Order order = new Order(Convert.ToInt32(reader["OrderId"]),Convert.ToInt32(reader["EmployeeId"]), Convert.ToInt32
-                            (reader["NumberOfCalibers"]), Convert.ToBoolean(reader["EndControl"]), reader["Comment"].ToString());
+                        Order order = new Order(Convert.ToInt32(reader["OrderId"]), Convert.ToInt32(reader["EmployeeId"]) , Convert.ToInt32
+                            (reader["NumberOfCalibers"]), Convert.ToBoolean(reader["EndControl"]), reader["Comment"].ToString(), reader["CaliberType"].ToString());
                             displayOrders.Add(order);
                     }
                 }
@@ -54,16 +55,16 @@ namespace Budweg.Repositories
         }
 
 
-        public Order CreateOrder(int employeeId, int numberOfCalibers, bool assigned, string comment)
+        public Order CreateOrder(int employeeId, string caliberType, int numberOfCalibers, string comment)
         {
-            Order order = new Order(employeeId, numberOfCalibers, comment);
+            Order order = new Order(employeeId, caliberType, numberOfCalibers, comment);
             AddOrder(order);
             return order;
         }
 
         public void AddOrder(Order order)
         {
-            orders.Add(order);
+            newOrders.Add(order);
         }
         public void ClearOrder()
         {
@@ -77,7 +78,7 @@ namespace Budweg.Repositories
 
         public Order GetOrderById(int id)
         {
-            foreach (Order order in orders)
+            foreach (Order order in newOrders)
             {
                 if (order.OrderId == id)
                 {
@@ -89,19 +90,19 @@ namespace Budweg.Repositories
 
         public void GetUnassignedOrders(Order order)
         {
-            for (int i = 0; i < orders.Count(); i++)
+            for (int i = 0; i < displayOrders.Count(); i++)
             {
-                if (orders[i].Assigned != true)
+                if (displayOrders[i].EmployeeId == null)
                 {
                     List<Order> UnAssignedOrders = new List<Order>();
-                    UnAssignedOrders.Add(orders[i]);
+                    UnAssignedOrders.Add(displayOrders[i]);
                 }
             }
         }
 
         public List<Order> GetAssignedOrders()
         {
-            return orders.FindAll(o => o.Assigned != false);
+            return displayOrders.FindAll(o => o.EmployeeId <= 1);
         }
 
         public void UpdateOrder(int id, int choice, int newData)
@@ -132,7 +133,7 @@ namespace Budweg.Repositories
 
         public void AssignOrder(int orderId, int emplyoeeId)
         {
-            foreach (Order order in orders)
+            foreach (Order order in displayOrders)
             {
                 if (order.OrderId == orderId)
                 {
