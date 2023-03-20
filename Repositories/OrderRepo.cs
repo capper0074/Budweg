@@ -73,6 +73,7 @@ namespace Budweg2._1.Repositories
 
         public Order GetOrderById(int id)
         {
+            Load();
             foreach (Order order in displayOrders)
             {
                 if (order.OrderId == id)
@@ -129,7 +130,7 @@ namespace Budweg2._1.Repositories
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE ORDERS SET @column = @newData WHERE OrderId = @orderId;", con);
+                SqlCommand cmd = new SqlCommand("UPDATE ORDERS SET @column = '@newData' WHERE OrderId = @orderId", con);
                 cmd.Parameters.AddWithValue("@column", column);
                 cmd.Parameters.AddWithValue("@newData", newData);
                 cmd.Parameters.AddWithValue("@orderId", orderId);

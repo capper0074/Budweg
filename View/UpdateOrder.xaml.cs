@@ -45,22 +45,23 @@ namespace Budweg2._1.View
 
             object caliberType;
             caliberType = "Kaliber type";
-            ComboBox1.Items.Add(comment);
+            ComboBox1.Items.Add(caliberType);
 
             object caliberNumber;
             caliberNumber = "Kaliber mængde";
             ComboBox1.Items.Add(caliberNumber);
 
+
         }
 
         private void BT_Update_Click(object sender, RoutedEventArgs e)
         {
-
-
             OrderController oc = new OrderController();
 
-            oc.UpdateOrder(Convert.ToInt32(TextBox_Id.Text), ComboBox1.Text, TextBox_newData.Text);
+            oc.UpdateOrder(Convert.ToInt32(TextBox_Id.Text), (ComboBox1.Text), TextBox_newData.Text);
 
+            TextBox_newData.Text = "";
+            TextBox_Id.Text = "";
 
             LB_ShowList.Items.Clear();
             OrderController orderController = new OrderController();
@@ -68,8 +69,7 @@ namespace Budweg2._1.View
             {
                 LB_ShowList.Items.Add(x);
             }
-            TextBox_newData.Text = "";
-            TextBox_Id.Text = "";
+
 
         }
         private void Close_Window_Click(object sender, RoutedEventArgs e)
@@ -81,7 +81,7 @@ namespace Budweg2._1.View
 
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
     }
 }

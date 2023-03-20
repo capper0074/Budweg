@@ -10,11 +10,11 @@
     <Grid Margin="10">
 
         <ListBox x:Name="LB_ShowList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="222,10,0,0"/>
-        <ComboBox x:Name="ComboBox1" Margin="10,68,348,180" MinWidth="100" SelectionChanged="ComboBox1_SelectionChanged"/>
+        <ComboBox x:Name="ComboBox1" Margin="10,68,144,87" MinWidth="100" MaxWidth="200"  SelectionChanged="ComboBox1_SelectionChanged"/>
         <Button x:Name="BT_Update" Content="Update Order" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Height="34" Width="110" Click="BT_Update_Click"/>
         <TextBox x:Name="TextBox_newData" HorizontalAlignment="Left" Margin="10,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_Id" HorizontalAlignment="Left" Margin="10,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="Label_Id" Content="Skriv venligst OrdreId" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label x:Name="Label_Id" Content="OrdreId" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="132"/>
         <Label x:Name="Label_newData" Content="Ændring" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Close_Window" Content="Close window" HorizontalAlignment="Left" Margin="137,222,0,0" VerticalAlignment="Top" Height="17" Width="80" Click="Close_Window_Click"/>
 

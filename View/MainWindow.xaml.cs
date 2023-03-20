@@ -51,11 +51,16 @@ namespace Budweg2._1
             deleteOrder.Show();
         }
 
-        private void UpdateOrder_Click(object sender, RoutedEventArgs e)
+        private void Update_Order_Click(object sender, RoutedEventArgs e)
         {
             UpdateOrder updateOrder = new UpdateOrder();
             Close();
             updateOrder.Show();
+        }
+
+        private void Close_Window_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

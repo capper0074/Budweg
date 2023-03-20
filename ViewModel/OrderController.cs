@@ -39,20 +39,28 @@ namespace Budweg2._1.ViewModel
                 {
                     case "Kaliber mændge":
                         or.GetOrderById(id).NumberOfCalibers = Convert.ToInt32(newData);
+                        column = "NumberOfCalibers";
                         break;
                     case "Medarbejder Id":
                         or.GetOrderById(id).EmployeeId = Convert.ToInt32(newData);
+                        column = "EmployeeId";
                         break;
                     case "Kaliber type":
                         or.GetOrderById(id).CaliberType = newData;
+                        column = "CaliberType";
                         break;
                     case "Ende kontrol":
                         or.GetOrderById(id).EndControl = Convert.ToBoolean(newData);
+                        column = "EndControl";
                         break;
                     case "Kommentar":
                         or.GetOrderById(id).Comment = newData;
+                        column = "Comment";
                         break;
                 }
+
+
+
 
                 or.UpdateOrder(id, column, newData);
             }
@@ -68,3 +76,4 @@ namespace Budweg2._1.ViewModel
         //}
     }
 }
+

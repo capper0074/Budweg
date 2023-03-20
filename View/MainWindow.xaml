@@ -11,6 +11,7 @@
         <ListBox x:Name="listBox1" HorizontalContentAlignment="Stretch" Margin="165,83,0,0" Grid.ColumnSpan="2"></ListBox>
         <Button x:Name="CreateOrder" Margin="10,140,500,230" Content="Create new order" Click="Create_Order_Click"/>
         <Button x:Name="DeleteOrder" Margin="10,189,500,181" Content="Delete order" Click="Delete_Order_Click" />
-        <Button x:Name="UpdateOrder" Margin="10,238,500,132" Content="Update order" Click="UpdateOrder_Click"/>
+        <Button x:Name="UpdateOrder" Margin="10,238,500,132" Content="Update order" Click="Update_Order_Click"/>
+        <Button x:Name="Close_Window" Margin="0,342,510,28" Content="Luk røven" Click="Close_Window_Click"/>
     </Grid>
 </Window>
