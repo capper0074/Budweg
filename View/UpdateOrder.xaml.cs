@@ -39,10 +39,6 @@ namespace Budweg2._1.View
             comment = "Kommentar";
             ComboBox1.Items.Add(comment);
 
-            object endControl;
-            endControl = "Ende kontrol";
-            ComboBox1.Items.Add(endControl);
-
             object caliberType;
             caliberType = "Kaliber type";
             ComboBox1.Items.Add(caliberType);
@@ -58,7 +54,7 @@ namespace Budweg2._1.View
         {
             OrderController oc = new OrderController();
 
-            oc.UpdateOrder(Convert.ToInt32(TextBox_Id.Text), (ComboBox1.Text), TextBox_newData.Text);
+            oc.UpdateOrder(Convert.ToInt32(TextBox_Id.Text), Convert.ToString(ComboBox1.SelectedValue), TextBox_newData.Text);
 
             TextBox_newData.Text = "";
             TextBox_Id.Text = "";
@@ -77,11 +73,6 @@ namespace Budweg2._1.View
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
-        }
-
-        private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
         }
     }
 }

@@ -6,17 +6,33 @@
         xmlns:local="clr-namespace:Budweg2._1.View"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="UpdateOrder" Height="300" Width="555">
+        Title="UpdateOrder" Height="350" Width="555">
     <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="1" Grid.Column="1" x:Name="LB_ShowList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="222,10,0,0"/>
 
-        <ListBox x:Name="LB_ShowList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="222,10,0,0"/>
-        <ComboBox x:Name="ComboBox1" Margin="10,68,144,87" MinWidth="100" MaxWidth="200"  SelectionChanged="ComboBox1_SelectionChanged"/>
-        <Button x:Name="BT_Update" Content="Update Order" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Height="34" Width="110" Click="BT_Update_Click"/>
-        <TextBox x:Name="TextBox_newData" HorizontalAlignment="Left" Margin="10,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBox_Id" HorizontalAlignment="Left" Margin="10,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="Label_Id" Content="OrdreId" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="132"/>
-        <Label x:Name="Label_newData" Content="Ændring" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Close_Window" Content="Close window" HorizontalAlignment="Left" Margin="137,222,0,0" VerticalAlignment="Top" Height="17" Width="80" Click="Close_Window_Click"/>
+            <ComboBox Grid.Row="1" Grid.Column="1" x:Name="ComboBox1" Margin="5" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            
+            <Label x:Name="Label_Id" Content="OrdreId" VerticalAlignment="Top" Margin="0,5,0,0"/>
+            <TextBox x:Name="TextBox_Id" TextWrapping="Wrap" Text="TextBox" Margin="0,5,0,0"/>
+
+            <Label x:Name="Label_newData" Content="Ændring" Margin="0,5,0,0" />
+            <TextBox x:Name="TextBox_newData" TextWrapping="Wrap" Text="TextBox" Margin="0,5,0,0"/>
+        
+            <Button x:Name="BT_Update" Content="Update Order" Margin="5,20,5,0" Click="BT_Update_Click"/>
+            <Button x:Name="Close_Window" Content="Close window" Margin="5,10,5,5" Click="Close_Window_Click"/>
+        </StackPanel>
+        
 
 
     </Grid>

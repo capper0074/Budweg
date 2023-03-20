@@ -101,7 +101,7 @@ namespace Budweg2._1.Repositories
             return displayOrders.FindAll(o => o.EmployeeId <= 1);
         }
 
-    
+
 
         public void AssignOrder(int orderId, int emplyoeeId)
         {
@@ -127,14 +127,48 @@ namespace Budweg2._1.Repositories
 
         public void UpdateOrder(int orderId, string column, string newData)
         {
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE ORDERS SET @column = '@newData' WHERE OrderId = @orderId", con);
-                cmd.Parameters.AddWithValue("@column", column);
-                cmd.Parameters.AddWithValue("@newData", newData);
-                cmd.Parameters.AddWithValue("@orderId", orderId);
-                cmd.ExecuteNonQuery();
+
+                if (column == "Kaliber mængde" || column == "Medarbejder Id" || column == "Kaliber type" || column == "Ende kontrol" || column == "Kommentar")
+                {
+                    switch (column)
+                    {
+                        case "Kaliber mændge":
+                            con.Open();
+                            SqlCommand cmd1 = new SqlCommand("UPDATE ORDERS SET NumberOfCalibers = @newData WHERE OrderId = @orderId", con);
+                            cmd1.Parameters.AddWithValue("@newData", newData);
+                            cmd1.Parameters.AddWithValue("@orderId", orderId);
+                            cmd1.ExecuteNonQuery();
+                            con.Close();
+                            break;
+                        case "Medarbejder Id":
+                            con.Open();
+                            SqlCommand cmd2 = new SqlCommand("UPDATE ORDERS SET EmployeeId = @newData WHERE OrderId = @orderId", con);
+                            cmd2.Parameters.AddWithValue("@newData", newData);
+                            cmd2.Parameters.AddWithValue("@orderId", orderId);
+                            cmd2.ExecuteNonQuery();
+                            con.Close();
+                            break;
+                        case "Kaliber type":
+                            con.Open();
+                            SqlCommand cmd3 = new SqlCommand("UPDATE ORDERS SET CaliberType = @newData WHERE OrderId = @orderId", con);
+                            cmd3.Parameters.AddWithValue("@newData", newData);
+                            cmd3.Parameters.AddWithValue("@orderId", orderId);
+                            cmd3.ExecuteNonQuery();
+                            con.Close();
+                            break;
+                        case "Kommentar":
+                            con.Open();
+                            SqlCommand cmd5 = new SqlCommand("UPDATE ORDERS SET Comment = @newData WHERE OrderId = @orderId", con);
+                            cmd5.Parameters.AddWithValue("@newData", newData);
+                            cmd5.Parameters.AddWithValue("@orderId", orderId);
+                            cmd5.ExecuteNonQuery();
+                            con.Close();
+                            break;
+                    }
+                }
             }
         }
     }
