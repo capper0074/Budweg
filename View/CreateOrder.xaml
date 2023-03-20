@@ -16,6 +16,7 @@
         <Label x:Name="LA_CalTyp" Content="Caliber Type" HorizontalAlignment="Left" Margin="0,51,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
         <Label x:Name="LA_NumCali" Content="Number of Calibers" HorizontalAlignment="Left" Margin="0,98,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
         <Label x:Name="LA_Comm" Content="Comment" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="29" Margin="0,145,0,0"/>
-        <Button x:Name="BT_Create" Content="Create Order" HorizontalAlignment="Left" Margin="140,96,0,0" VerticalAlignment="Top" Height="24" Width="103" Click="BT_Create_Click"/>
+        <Button x:Name="BT_Create" Content="Create Order" HorizontalAlignment="Left" Margin="155,103,0,0" VerticalAlignment="Top" Height="24" Width="103" Click="BT_Create_Click"/>
+        <Button x:Name="Close_Window" Content="Close window" HorizontalAlignment="Left" Margin="180,193,0,0" VerticalAlignment="Top" Height="20" Width="78" Click="Close_Window_Click"/>
     </Grid>
 </Window>

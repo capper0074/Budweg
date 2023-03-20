@@ -9,8 +9,9 @@
         Title="DeleteOrder" Height="300" Width="500">
     <Grid Margin="10">
         <ListBox x:Name="LB_ShowOrders" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="176,10,10,10"/>
-        <Button x:Name="BT_DeleteOrder" Content="Delete Order" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Height="26" Width="103" Click="BT_DeleteOrder_Click"/>
-        <TextBox x:Name="TB_OrderID" HorizontalAlignment="Left" Margin="10,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="BT_DeleteOrder" Content="Delete Order" HorizontalAlignment="Left" Margin="21,106,0,0" VerticalAlignment="Top" Height="26" Width="103" Click="BT_DeleteOrder_Click"/>
+        <TextBox x:Name="TB_OrderID" HorizontalAlignment="Left" Margin="21,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Close_Button" Content="Close window" HorizontalAlignment="Left" Margin="21,222,0,0" VerticalAlignment="Top" Height="19" Width="81" Click="Close_Window_Click"/>
 
     </Grid>
 </Window>

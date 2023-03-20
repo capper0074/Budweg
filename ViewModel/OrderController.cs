@@ -30,22 +30,33 @@ namespace Budweg2._1.ViewModel
             orderRepository.DeleteOrder(id);
         }
 
-        //public void UpdateOrder(int id, int choice, int newData)
-        //{
-        //    if (choice > 0 && choice < 2)
-        //    {
-        //        switch (choice)
-        //        {
-        //            case 1:
-        //                GetOrderById(id).NumberOfCalibers = newData;
-        //                break;
-        //            case 2:
-        //                GetOrderById(id).EmployeeId = newData;
-        //                break;
-        //        }
+        public void UpdateOrder(int id, string column, string newData)
+        {
+            OrderRepository or = new OrderRepository();
+            if (column == "Kaliber mængde" || column == "Medarbejder Id" || column == "Kaliber type" || column == "Ende kontrol" || column == "Kommentar")
+            {
+                switch (column)
+                {
+                    case "Kaliber mændge":
+                        or.GetOrderById(id).NumberOfCalibers = Convert.ToInt32(newData);
+                        break;
+                    case "Medarbejder Id":
+                        or.GetOrderById(id).EmployeeId = Convert.ToInt32(newData);
+                        break;
+                    case "Kaliber type":
+                        or.GetOrderById(id).CaliberType = newData;
+                        break;
+                    case "Ende kontrol":
+                        or.GetOrderById(id).EndControl = Convert.ToBoolean(newData);
+                        break;
+                    case "Kommentar":
+                        or.GetOrderById(id).Comment = newData;
+                        break;
+                }
 
-        //    }
-        //}
+                or.UpdateOrder(id, column, newData);
+            }
+        }
         //public void UpdateOrder(int id, string newData)
         //{
         //    GetOrderById(id).Comment = newData;

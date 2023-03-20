@@ -6,6 +6,7 @@
     <RootNamespace>Budweg2._1</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <StartupObject>Budweg2._1.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

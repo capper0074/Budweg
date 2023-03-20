@@ -53,5 +53,12 @@ namespace Budweg2._1.View
 
 
         }
+
+        private void Close_Window_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
     }
 }

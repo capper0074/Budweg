@@ -61,7 +61,7 @@ namespace Budweg2._1.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Budweg;component/view/errorwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Budweg2._1;component/view/errorwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\ErrorWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

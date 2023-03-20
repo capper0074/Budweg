@@ -73,7 +73,7 @@ namespace Budweg2._1.Repositories
 
         public Order GetOrderById(int id)
         {
-            foreach (Order order in newOrders)
+            foreach (Order order in displayOrders)
             {
                 if (order.OrderId == id)
                 {

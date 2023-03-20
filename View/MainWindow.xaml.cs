@@ -32,7 +32,9 @@ namespace Budweg2._1
             foreach (Order x in orderController.RetrieveAllOrders())
             {
                 listBox1.Items.Add(x);
+
             }
+
         }
 
         private void Create_Order_Click(object sender, RoutedEventArgs e)

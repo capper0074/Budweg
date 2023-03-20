@@ -39,12 +39,18 @@ namespace Budweg2._1.View
                 Close();
                 mainWindow.Show();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ErrorWindow errorWindow = new ErrorWindow();
                 errorWindow.Show();
                 errorWindow.TB_Error.Text = "Ups, i am missing some information";
             }
+        }
+        private void Close_Window_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
     }
 }

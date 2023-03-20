@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\cappe\Desktop\GUI\Budweg\obj\Debug\net6.0-windows\
+C:\Users\nikol\source\repos\Budweg.2.1\obj\Debug\net6.0-windows\
 Budweg2._1
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\cappe\Desktop\GUI\Budweg\App.xaml
+C:\Users\nikol\source\repos\Budweg.2.1\App.xaml
 5-924439871
 
 19510778700
-195-1398007348
+1951557871924
 View\CreateOrder.xaml;View\DeleteOrder.xaml;View\ErrorWindow.xaml;View\MainWindow.xaml;View\UpdateOrder.xaml;
 
 False
