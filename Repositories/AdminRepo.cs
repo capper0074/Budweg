@@ -1,4 +1,4 @@
-﻿using Budweg.Models;
+﻿using Budweg2._1.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Budweg.Repositories
+namespace Budweg2._1.Repositories
 {
     public class AdminRepository
     {

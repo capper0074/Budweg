@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Budweg.Models
+namespace Budweg2._1.Model
 {
     public class Admin
     {
@@ -23,5 +23,4 @@ namespace Budweg.Models
             return $"{Name}, {Email}, {Password}";
         }
     }
-
 }

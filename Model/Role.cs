@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Budweg.Models
+namespace Budweg2._1.Model
 {
-    public enum  Role
+    public enum Role
     {
         Foreman,
         AssemblyWorker,

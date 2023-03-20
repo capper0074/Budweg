@@ -1,13 +1,12 @@
-﻿using System;
+﻿using Budweg2._1.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
-using Budweg.Models;
 
-namespace Budweg.Repositories
+namespace Budweg2._1.Repositories
 {
     public class EmployeeRepository
     {
@@ -43,8 +42,8 @@ namespace Budweg.Repositories
                 {
                     while (reader.Read())
                     {
-                        Employee owner = new Employee(reader["Name"].ToString(), reader["Email"].ToString(), reader["Password"].ToString(), (Role)Enum.Parse(typeof (Role), reader["Role"].ToString()));
-                        owner.EmployeeId = int.Parse(reader["EmployeeID"].ToString()); 
+                        Employee owner = new Employee(reader["Name"].ToString(), reader["Email"].ToString(), reader["Password"].ToString(), (Role)Enum.Parse(typeof(Role), reader["Role"].ToString()));
+                        owner.EmployeeId = int.Parse(reader["EmployeeID"].ToString());
                         displayEmployees.Add(owner);
                     }
                 }

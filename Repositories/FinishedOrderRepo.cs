@@ -1,13 +1,11 @@
-﻿using Budweg.Models;
+﻿using Budweg2._1.Model;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace Budweg.Repositories
+namespace Budweg2._1.Repositories
 {
     public class FinishedOrderRepository
     {
@@ -17,13 +15,12 @@ namespace Budweg.Repositories
 
         public void Load()
         {
-           
-           
+
         }
 
-        public void Save() 
+        public void Save()
         {
-            
+
         }
 
         public FinishedOrder CreateFinishedOrder(int qualityCheckId, int orderId)
@@ -72,12 +69,12 @@ namespace Budweg.Repositories
 
         }
 
-        public List<FinishedOrder> GetFinishedOrders() 
+        public List<FinishedOrder> GetFinishedOrders()
         {
             return finishedOrders;
         }
 
-        public FinishedOrder GetFinishedOrder(int id) 
+        public FinishedOrder GetFinishedOrder(int id)
         {
             foreach (FinishedOrder finishedOrder in finishedOrders)
             {
