@@ -36,6 +36,7 @@ namespace Budweg2._1.ViewModel
                 or.UpdateOrder(id, column, newData);
             
         }
+
         //public void UpdateOrder(int id, string newData)
         //{
         //    GetOrderById(id).Comment = newData;

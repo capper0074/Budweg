@@ -15,12 +15,12 @@ namespace Budweg2._1.Repositories
 
         public void Load()
         {
-
+            //Needs to be implemented
         }
 
         public void Save()
         {
-
+            //Needs to be implemented
         }
 
         public FinishedOrder CreateFinishedOrder(int qualityCheckId, int orderId)
