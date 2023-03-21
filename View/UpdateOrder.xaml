@@ -24,13 +24,13 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
             
             <Label x:Name="Label_Id" Content="OrdreId" VerticalAlignment="Top" Margin="0,5,0,0"/>
-            <TextBox x:Name="TextBox_Id" TextWrapping="Wrap" Text="TextBox" Margin="0,5,0,0"/>
+            <TextBox x:Name="TextBox_Id" TextWrapping="Wrap" Text="" Margin="0,5,0,0"/>
 
             <Label x:Name="Label_newData" Content="Ændring" Margin="0,5,0,0" />
-            <TextBox x:Name="TextBox_newData" TextWrapping="Wrap" Text="TextBox" Margin="0,5,0,0"/>
+            <TextBox x:Name="TextBox_newData" TextWrapping="Wrap" Text="" Margin="0,5,0,0"/>
         
-            <Button x:Name="BT_Update" Content="Update Order" Margin="5,20,5,0" Click="BT_Update_Click"/>
-            <Button x:Name="Close_Window" Content="Close window" Margin="5,10,5,5" Click="Close_Window_Click"/>
+            <Button x:Name="BT_Update" Content="Opdater" Margin="5,20,5,0" Click="BT_Update_Click"/>
+            <Button x:Name="Close_Window" Content="Luk" Margin="5,10,5,5" Click="Close_Window_Click"/>
         </StackPanel>
         
 

@@ -39,9 +39,6 @@ namespace Budweg2._1.View
                 OrderController orderController = new OrderController();
                 orderController.DeleteOrder(Convert.ToInt32(TB_OrderID.Text));
                 TB_OrderID.Text = "";
-                MainWindow mainWindow = new MainWindow();
-                Close();
-                mainWindow.Show();
 
             }
             catch (Exception ex)
