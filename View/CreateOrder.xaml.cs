@@ -1,4 +1,5 @@
-﻿using Budweg2._1.ViewModel;
+﻿using Budweg2._1.Model;
+using Budweg2._1.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,16 @@ namespace Budweg2._1.View
         public CreateOrder()
         {
             InitializeComponent();
+            
+            LB_ShowList.Items.Clear();
+            OrderController orderController = new OrderController();
+            foreach (Order order in orderController.RetrieveAllOrders())
+            {
+                LB_ShowList.Items.Add(order);
+            }
+
+            orderController.GetRole(); //returns enum Role's
+
         }
 
         private void BT_Create_Click(object sender, RoutedEventArgs e)
@@ -35,9 +46,14 @@ namespace Budweg2._1.View
                 TB_CaTy.Text = "";
                 TB_NumCal.Text = "";
                 TB_Comm.Text = "";
-                MainWindow mainWindow = new MainWindow();
-                Close();
-                mainWindow.Show();
+
+                
+                LB_ShowList.Items.Clear();
+                foreach (Order order in orderController.RetrieveAllOrders())
+                {
+                    LB_ShowList.Items.Add(order);
+                }
+
             }
             catch (Exception)
             {
