@@ -37,8 +37,16 @@ namespace Budweg2._1.View
             try
             {
                 OrderController orderController = new OrderController();
-                orderController.DeleteOrder(Convert.ToInt32(TB_OrderID.Text));
-                TB_OrderID.Text = "";
+
+                string[] itemVal = LB_ShowOrders.SelectedItem.ToString().Split(",");
+
+                orderController.DeleteOrder(Convert.ToInt32(itemVal[0]));
+
+                LB_ShowOrders.Items.Clear();
+                foreach (Order x in orderController.RetrieveAllOrders())
+                {
+                    LB_ShowOrders.Items.Add(x);
+                }
 
             }
             catch (Exception ex)

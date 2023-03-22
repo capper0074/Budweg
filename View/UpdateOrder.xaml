@@ -9,30 +9,28 @@
         Title="UpdateOrder" Height="350" Width="555">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <ListBox Grid.Row="1" Grid.Column="1" x:Name="LB_ShowList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="222,10,0,0"/>
 
-            <ComboBox Grid.Row="1" Grid.Column="1" x:Name="ComboBox1" Margin="5" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ListBox Grid.Column="1" x:Name="LB_ShowList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,0,0" Grid.RowSpan="2"/>
+
+
 
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-            
-            <Label x:Name="Label_Id" Content="OrdreId" VerticalAlignment="Top" Margin="0,5,0,0"/>
-            <TextBox x:Name="TextBox_Id" TextWrapping="Wrap" Text="" Margin="0,5,0,0"/>
+            <ComboBox x:Name="ComboBox1" Height="20" Width="120" HorizontalAlignment="Center" Margin="20"/>
 
-            <Label x:Name="Label_newData" Content="Ændring" Margin="0,5,0,0" />
-            <TextBox x:Name="TextBox_newData" TextWrapping="Wrap" Text="" Margin="0,5,0,0"/>
-        
-            <Button x:Name="BT_Update" Content="Opdater" Margin="5,20,5,0" Click="BT_Update_Click"/>
-            <Button x:Name="Close_Window" Content="Luk" Margin="5,10,5,5" Click="Close_Window_Click"/>
+            <Label x:Name="Label_newData" Content="Ændring" Margin="0,5,0,0" Width="117" />
+            <TextBox x:Name="TextBox_newData" TextWrapping="Wrap" Text="" Margin="0,5,0,0" Width="120"/>
+
+            <Button x:Name="BT_Update" Content="Opdater" Margin="5,20,5,0" Click="BT_Update_Click" Width="120"/>
+            <Button x:Name="Close_Window" Content="Luk" Margin="5,10,5,5" Click="Close_Window_Click" Width="120"/>
         </StackPanel>
-        
+
 
 
     </Grid>

@@ -47,17 +47,17 @@ namespace Budweg2._1.View
             caliberNumber = "Kaliber mængde";
             ComboBox1.Items.Add(caliberNumber);
 
-
         }
 
         private void BT_Update_Click(object sender, RoutedEventArgs e)
         {
             OrderController oc = new OrderController();
 
-            oc.UpdateOrder(Convert.ToInt32(TextBox_Id.Text), Convert.ToString(ComboBox1.SelectedValue), TextBox_newData.Text);
+            string[] boxValue = LB_ShowList.SelectedItem.ToString().Split(",");
+
+            oc.UpdateOrder(Convert.ToInt32(boxValue[0]), Convert.ToString(ComboBox1.SelectedValue), TextBox_newData.Text);
 
             TextBox_newData.Text = "";
-            TextBox_Id.Text = "";
 
             LB_ShowList.Items.Clear();
             OrderController orderController = new OrderController();
