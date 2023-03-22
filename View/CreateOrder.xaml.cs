@@ -32,17 +32,24 @@ namespace Budweg2._1.View
                 LB_ShowList.Items.Add(order);
             }
 
-            orderController.GetRole(); //returns enum Role's
+            EmployeeController employeeController = new EmployeeController();
+            foreach (Employee emp in employeeController.GetAssemblyWorkers())
+            {
+                ComboBox1.Items.Add(emp);
 
+
+            }
+            
         }
 
         private void BT_Create_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                string[] boxValue = ComboBox1.Text.Split(",");
+
                 OrderController orderController = new OrderController();
-                orderController.CreateOrder(Convert.ToInt32(TB_EmpID.Text), TB_CaTy.Text, Convert.ToInt32(TB_NumCal.Text), TB_Comm.Text);
-                TB_EmpID.Text = "";
+                orderController.CreateOrder(Convert.ToInt32(boxValue[0]), TB_CaTy.Text, Convert.ToInt32(TB_NumCal.Text), TB_Comm.Text);
                 TB_CaTy.Text = "";
                 TB_NumCal.Text = "";
                 TB_Comm.Text = "";

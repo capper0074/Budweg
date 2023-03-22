@@ -26,7 +26,7 @@ namespace Budweg2._1.Model
 
         public override string ToString()
         {
-            return $"{EmployeeId}, {Name}, {Email}, {Password}, {EmployeeRole}";
+            return $"{EmployeeId}, {Name}, {Email}, {EmployeeRole}";
         }
     }
 }
